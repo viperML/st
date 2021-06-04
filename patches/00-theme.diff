@@ -1,17 +1,21 @@
 --- config.def.h	2021-06-04 23:36:02.813172366 +0200
-+++ config.theme.h	2021-06-05 01:17:59.335277823 +0200
-@@ -5,8 +5,8 @@
++++ config.theme.h	2021-06-05 01:32:49.681267896 +0200
+@@ -5,8 +5,12 @@
   *
   * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
   */
 -static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
 -static int borderpx = 2;
 +static char *font = "JetBrains Mono:pixelsize=15:antialias=true:autohint=true";
++// static char *font2[] = {
++//     "Font Awesome 5 Free Regular:pixelsize=15:antialias=true:autohint=true",
++//     "Font Awesome 5 Free Brands:pixelsize=15:antialias=true:autohint=true",
++// };
 +static int borderpx = 15;
  
  /*
   * What program is execed by st depends of these precedence rules:
-@@ -60,7 +60,7 @@
+@@ -60,7 +64,7 @@
   * blinking timeout (set to 0 to disable blinking) for the terminal blinking
   * attribute.
   */
@@ -20,7 +24,7 @@
  
  /*
   * thickness of underline and bar cursors
-@@ -96,24 +96,24 @@
+@@ -96,24 +100,24 @@
  /* Terminal colors (16 first used in escape sequence) */
  static const char *colorname[] = {
  	/* 8 normal colors */
@@ -61,7 +65,7 @@
  
  	[255] = 0,
  
-@@ -139,7 +139,7 @@
+@@ -139,7 +143,7 @@
   * 6: Bar ("|")
   * 7: Snowman ("☃")
   */
