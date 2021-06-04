@@ -17,11 +17,9 @@ provides=(st)
 conflicts=(st)
 url=https://st.suckless.org
 source=(git://git.suckless.org/st
-	terminfo.patch
 	README.terminfo.rst)
-sha256sums=(SKIP
-	    SKIP
-            SKIP)
+sha256sums=('SKIP'
+            '0ebcbba881832adf9c98ce9fe7667c851d3cc3345077cb8ebe32702698665be2')
 _gitname="st"	    
 _sourcedir="$_gitname"
 _makeopts="--directory=$_sourcedir"
@@ -35,16 +33,23 @@ pkgver() {
 
 prepare() {
 
-patch --directory="$_sourcedir" --strip=0 < terminfo.patch
-
-
-	echo 'Applying patches from $_startdir if they exist...'
-	if [ -d "$_startdir/patches" ]; then
-	        for patch in $_startdir/patches/*.diff; do
-                        echo "Applying $patch ..."
-		        patch -p1 -s -i "$patch"
-		done;
-	fi;
+# patch --directory="$_sourcedir" --strip=0 < terminfo.patch
+# 
+# 
+# 	echo 'Applying patches from $_startdir if they exist...'
+# 	if [ -d "$_startdir/patches" ]; then
+# 	        for patch in $_startdir/patches/*.diff; do
+#                         echo "Applying $patch ..."
+# 		        patch -p1 -s -i "$patch"
+# 		done;
+# 	fi;
+  cp $BUILDDIR/patches/* $_sourcedir
+  cd $_sourcedir
+  for patch in *.diff; do
+      echo "Applying patch $patch"
+      patch -i "$patch"
+  done;
+      
 
   # This package provides a mechanism to provide a custom config.h. Multiple
   # configuration states are determined by the presence of two files in
@@ -64,18 +69,18 @@ patch --directory="$_sourcedir" --strip=0 < terminfo.patch
   #
   # After this test, config.def.h is copied from $srcdir to $BUILDDIR to
   # provide an up to date template for the user.
-  if [ -e "$BUILDDIR/config.h" ]
-  then
-    cp "$BUILDDIR/config.h" "$_sourcedir"
-  elif [ ! -e "$BUILDDIR/config.def.h" ]
-  then
-    msg='This package can be configured in config.h. Copy the config.def.h '
-    msg+='that was just placed into the package directory to config.h and '
-    msg+='modify it to change the configuration. Or just leave it alone to '
-    msg+='continue to use default values.'
-    warning "$msg"
-  fi
-  cp "$_sourcedir/config.def.h" "$BUILDDIR"
+  # if [ -e "$BUILDDIR/config.h" ]
+  # then
+  #   cp "$BUILDDIR/config.h" "$_sourcedir"
+  # elif [ ! -e "$BUILDDIR/config.def.h" ]
+  # then
+  #   msg='This package can be configured in config.h. Copy the config.def.h '
+  #   msg+='that was just placed into the package directory to config.h and '
+  #   msg+='modify it to change the configuration. Or just leave it alone to '
+  #   msg+='continue to use default values.'
+  #   warning "$msg"
+  # fi
+  # cp "$_sourcedir/config.def.h" "$BUILDDIR"
 }
 
 build() {

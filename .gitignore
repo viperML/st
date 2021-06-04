@@ -1,5 +1,5 @@
 *.zst
 pkg
 src
+src/*
 st
-config.def.h
