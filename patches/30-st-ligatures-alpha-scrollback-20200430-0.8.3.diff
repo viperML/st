@@ -196,21 +196,21 @@ index 0000000..b3e02d0
 +void hbtransform(XftGlyphFontSpec *, const Glyph *, size_t, int, int);
 +
 diff --git a/st.c b/st.c
-index 0ce6ac2..3201490 100644
+index 641edc0..14a0b66 100644
 --- a/st.c
 +++ b/st.c
-@@ -2599,7 +2599,8 @@ draw(void)
- 
+@@ -2670,7 +2670,8 @@ draw(void)
  	drawregion(0, 0, term.col, term.row);
- 	xdrawcursor(cx, term.c.y, term.line[term.c.y][cx],
--			term.ocx, term.ocy, term.line[term.ocy][term.ocx]);
-+			term.ocx, term.ocy, term.line[term.ocy][term.ocx],
-+			term.line[term.ocy], term.col);
+ 	if (term.scr == 0)
+ 		xdrawcursor(cx, term.c.y, term.line[term.c.y][cx],
+-				term.ocx, term.ocy, term.line[term.ocy][term.ocx]);
++				term.ocx, term.ocy, term.line[term.ocy][term.ocx],
++				term.line[term.ocy], term.col);
  	term.ocx = cx;
  	term.ocy = term.c.y;
  	xfinishdraw();
 diff --git a/st.h b/st.h
-index 2c656af..f5390d2 100644
+index 2b2ba94..01bfb05 100644
 --- a/st.h
 +++ b/st.h
 @@ -11,7 +11,8 @@
