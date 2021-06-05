@@ -1,5 +1,5 @@
 --- config.def.h	2021-06-05 11:41:08.099771730 +0200
-+++ config.theme.h	2021-06-05 11:53:08.222578783 +0200
++++ config.theme.h	2021-06-05 13:43:38.944458050 +0200
 @@ -5,8 +5,17 @@
   *
   * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
@@ -25,7 +25,7 @@
  
  /* Kerning / character bounding-box multipliers */
 -static float cwscale = 1.0;
-+static float cwscale = 0.8;
++static float cwscale = 0.85;
  static float chscale = 1.0;
  
  /*

@@ -35,7 +35,7 @@ char *stty_args = "stty raw pass8 nl -echo -iexten -cstopb 38400";
 char *vtiden = "\033[?6c";
 
 /* Kerning / character bounding-box multipliers */
-static float cwscale = 0.8;
+static float cwscale = 0.85;
 static float chscale = 1.0;
 
 /*

@@ -4,7 +4,7 @@
 # Contributor: Sebastian J. Bronner <waschtl@sbronner.com>
 # Contributor: Patrick Jackson <PatrickSJackson gmail com>
 # Contributor: Christoph Vigano <mail@cvigano.de>
-
+groups=('modified')
 pkgname=st-git
 pkgver=0.8.4.r4.g4536f46
 pkgrel=1
