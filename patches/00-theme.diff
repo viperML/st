@@ -1,6 +1,6 @@
---- config.def.h	2021-06-04 23:36:02.813172366 +0200
-+++ config.theme.h	2021-06-05 10:17:22.392054082 +0200
-@@ -5,8 +5,12 @@
+--- config.def.h	2021-06-05 11:41:08.099771730 +0200
++++ config.theme.h	2021-06-05 11:32:48.855118605 +0200
+@@ -5,8 +5,16 @@
   *
   * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
   */
@@ -8,14 +8,27 @@
 -static int borderpx = 2;
 +static char *font = "JetBrains Mono:pixelsize=15:antialias=true:autohint=true";
 +static char *font2[] = {
++    "JoyPixels:pixelsize=10:antialias=true:autohint=true",
++    "Font Awesome 5 Free Solid:pixelsize=15:antialias=true:autohint=true",
++    "Font Awesome 5 Brands:pixelsize=15:antialias=true:autohint=true",
++    "Symbols Nerd Font:pixelsize=15:antialias=true:autohint=true",
 +    "Font Awesome 5 Free Regular:pixelsize=15:antialias=true:autohint=true",
-+    "Font Awesome 5 Free Brands:pixelsize=15:antialias=true:autohint=true",
++    "Noto Sans Mono:pixelsize=15:antialias=true:autohint=true",
 +};
 +static int borderpx = 15;
  
  /*
   * What program is execed by st depends of these precedence rules:
-@@ -60,7 +64,7 @@
+@@ -26,7 +34,7 @@
+ char *vtiden = "\033[?6c";
+ 
+ /* Kerning / character bounding-box multipliers */
+-static float cwscale = 1.0;
++static float cwscale = 0.8;
+ static float chscale = 1.0;
+ 
+ /*
+@@ -60,7 +68,7 @@
   * blinking timeout (set to 0 to disable blinking) for the terminal blinking
   * attribute.
   */
@@ -24,7 +37,7 @@
  
  /*
   * thickness of underline and bar cursors
-@@ -96,24 +100,24 @@
+@@ -96,24 +104,24 @@
  /* Terminal colors (16 first used in escape sequence) */
  static const char *colorname[] = {
  	/* 8 normal colors */
@@ -65,7 +78,7 @@
  
  	[255] = 0,
  
-@@ -139,7 +143,7 @@
+@@ -139,7 +147,7 @@
   * 6: Bar ("|")
   * 7: Snowman ("☃")
   */
