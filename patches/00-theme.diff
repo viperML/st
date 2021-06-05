@@ -1,5 +1,5 @@
 --- config.def.h	2021-06-04 23:36:02.813172366 +0200
-+++ config.theme.h	2021-06-05 01:32:49.681267896 +0200
++++ config.theme.h	2021-06-05 10:17:22.392054082 +0200
 @@ -5,8 +5,12 @@
   *
   * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
@@ -7,10 +7,10 @@
 -static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
 -static int borderpx = 2;
 +static char *font = "JetBrains Mono:pixelsize=15:antialias=true:autohint=true";
-+// static char *font2[] = {
-+//     "Font Awesome 5 Free Regular:pixelsize=15:antialias=true:autohint=true",
-+//     "Font Awesome 5 Free Brands:pixelsize=15:antialias=true:autohint=true",
-+// };
++static char *font2[] = {
++    "Font Awesome 5 Free Regular:pixelsize=15:antialias=true:autohint=true",
++    "Font Awesome 5 Free Brands:pixelsize=15:antialias=true:autohint=true",
++};
 +static int borderpx = 15;
  
  /*

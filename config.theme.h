@@ -6,10 +6,10 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 static char *font = "JetBrains Mono:pixelsize=15:antialias=true:autohint=true";
-// static char *font2[] = {
-//     "Font Awesome 5 Free Regular:pixelsize=15:antialias=true:autohint=true",
-//     "Font Awesome 5 Free Brands:pixelsize=15:antialias=true:autohint=true",
-// };
+static char *font2[] = {
+    "Font Awesome 5 Free Regular:pixelsize=15:antialias=true:autohint=true",
+    "Font Awesome 5 Free Brands:pixelsize=15:antialias=true:autohint=true",
+};
 static int borderpx = 15;
 
 /*
