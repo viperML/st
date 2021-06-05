@@ -1,6 +1,6 @@
 --- config.def.h	2021-06-05 11:41:08.099771730 +0200
-+++ config.theme.h	2021-06-05 11:32:48.855118605 +0200
-@@ -5,8 +5,16 @@
++++ config.theme.h	2021-06-05 11:53:08.222578783 +0200
+@@ -5,8 +5,17 @@
   *
   * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
   */
@@ -8,7 +8,8 @@
 -static int borderpx = 2;
 +static char *font = "JetBrains Mono:pixelsize=15:antialias=true:autohint=true";
 +static char *font2[] = {
-+    "JoyPixels:pixelsize=10:antialias=true:autohint=true",
++    "JoyPixels:pixelsize=15:antialias=true:autohint=true",
++    // "Twitter Color Emoji:pixelsize=15:antialias=true:autohint=true",
 +    "Font Awesome 5 Free Solid:pixelsize=15:antialias=true:autohint=true",
 +    "Font Awesome 5 Brands:pixelsize=15:antialias=true:autohint=true",
 +    "Symbols Nerd Font:pixelsize=15:antialias=true:autohint=true",
@@ -19,7 +20,7 @@
  
  /*
   * What program is execed by st depends of these precedence rules:
-@@ -26,7 +34,7 @@
+@@ -26,7 +35,7 @@
  char *vtiden = "\033[?6c";
  
  /* Kerning / character bounding-box multipliers */
@@ -28,7 +29,7 @@
  static float chscale = 1.0;
  
  /*
-@@ -60,7 +68,7 @@
+@@ -60,7 +69,7 @@
   * blinking timeout (set to 0 to disable blinking) for the terminal blinking
   * attribute.
   */
@@ -37,7 +38,7 @@
  
  /*
   * thickness of underline and bar cursors
-@@ -96,24 +104,24 @@
+@@ -96,24 +105,24 @@
  /* Terminal colors (16 first used in escape sequence) */
  static const char *colorname[] = {
  	/* 8 normal colors */
@@ -78,7 +79,7 @@
  
  	[255] = 0,
  
-@@ -139,7 +147,7 @@
+@@ -139,7 +148,7 @@
   * 6: Bar ("|")
   * 7: Snowman ("☃")
   */
