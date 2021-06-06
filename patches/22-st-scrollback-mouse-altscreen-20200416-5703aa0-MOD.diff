@@ -1,18 +1,3 @@
-diff --git a/config.def.h b/config.def.h
-index 4b3bf15..1986316 100644
---- a/config.def.h
-+++ b/config.def.h
-@@ -163,8 +163,8 @@ static uint forcemousemod = ShiftMask;
-  */
- static MouseShortcut mshortcuts[] = {
- 	/* mask                 button   function        argument       release */
--	{ ShiftMask,            Button4, kscrollup,      {.i = 1} },
--	{ ShiftMask,            Button5, kscrolldown,    {.i = 1} },
-+	{ XK_ANY_MOD,           Button4, kscrollup,      {.i = 1},      0, /* !alt */ -1 },
-+	{ XK_ANY_MOD,           Button5, kscrolldown,    {.i = 1},      0, /* !alt */ -1 },
- 	{ XK_ANY_MOD,           Button2, selpaste,       {.i = 0},      1 },
- 	{ XK_ANY_MOD,           Button4, ttysend,        {.s = "\031"} },
- 	{ XK_ANY_MOD,           Button5, ttysend,        {.s = "\005"} },
 diff --git a/st.c b/st.c
 index f8b6f67..dd4cb31 100644
 --- st.c
