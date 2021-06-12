@@ -1,12 +1,12 @@
 --- config.def.h	2021-06-05 11:41:08.099771730 +0200
-+++ config.theme.h	2021-06-06 11:30:38.152065288 +0200
++++ config.theme.h	2021-06-12 11:17:29.291933099 +0200
 @@ -5,8 +5,17 @@
   *
   * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
   */
 -static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
 -static int borderpx = 2;
-+static char *font = "JetBrains Mono:pixelsize=15:antialias=true:autohint=true";
++static char *font = "JetBrains Mono Medium:pixelsize=15:antialias=true:autohint=false";
 +static char *font2[] = {
 +    "JoyPixels:pixelsize=15:antialias=true:autohint=true",
 +    // "Twitter Color Emoji:pixelsize=15:antialias=true:autohint=true",
@@ -20,15 +20,6 @@
  
  /*
   * What program is execed by st depends of these precedence rules:
-@@ -26,7 +35,7 @@
- char *vtiden = "\033[?6c";
- 
- /* Kerning / character bounding-box multipliers */
--static float cwscale = 1.0;
-+static float cwscale = 0.85;
- static float chscale = 1.0;
- 
- /*
 @@ -53,14 +62,14 @@
   * near minlatency, but it waits longer for slow updates to avoid partial draw.
   * low minlatency will tear/flicker more, as it can "detect" idle too early.
@@ -58,7 +49,7 @@
 -	"magenta3",
 -	"cyan3",
 -	"gray90",
-+	"#000000",
++	"#121212",
 +	"#ff5555",
 +	"#50fa7b",
 +	"#f1fa8c",

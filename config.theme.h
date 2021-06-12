@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "JetBrains Mono:pixelsize=15:antialias=true:autohint=true";
+static char *font = "JetBrains Mono Medium:pixelsize=15:antialias=true:autohint=false";
 static char *font2[] = {
     "JoyPixels:pixelsize=15:antialias=true:autohint=true",
     // "Twitter Color Emoji:pixelsize=15:antialias=true:autohint=true",
@@ -35,7 +35,7 @@ char *stty_args = "stty raw pass8 nl -echo -iexten -cstopb 38400";
 char *vtiden = "\033[?6c";
 
 /* Kerning / character bounding-box multipliers */
-static float cwscale = 0.85;
+static float cwscale = 1.0;
 static float chscale = 1.0;
 
 /*
@@ -105,7 +105,7 @@ unsigned int tabspaces = 8;
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
 	/* 8 normal colors */
-	"#000000",
+	"#121212",
 	"#ff5555",
 	"#50fa7b",
 	"#f1fa8c",
