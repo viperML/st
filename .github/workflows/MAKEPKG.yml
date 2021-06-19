@@ -29,17 +29,21 @@ jobs:
       - name: ls
         run: ls && pwd
         
-      - name: Arch makepkg
-        uses: 2m/arch-pkgbuild-builder@v1.16
+      - name: makepkg  
+        uses: edlanglois/pkgbuild-action@v1.1.7
         with:
-          # Path to DIRECTORY where the PKGBUILD file is. Assumes the directory is the name of package, ie /path/to/pkgname/
-          pkgname: .
-          # Validation target. Can be one of: "pkgbuild", "srcinfo", "run"
-          target: pkgbuild # default is pkgbuild
-          # Command to run after package installation. Used when target=run
-          command: ls # optional
-          # Turns debugging on
-          debug: true # optional
+          # Relative path to directory containing the PKGBUILD file.
+          pkgdir: . # optional, default is .
+          # Support AUR dependencies if nonempty.
+          aurDeps: true # optional, default is 
+          # Disable namcap checks if nonempty.
+          namcapDisable: true # optional, default is 
+          # A comma-separated list of rules for namcap to run.
+          # namcapRules: # optional, default is 
+          # A comma-separated list of rules for namcap not to run.
+          # namcapExcludeRules: # optional, default is 
+          # Additional arguments to pass to makepkg.
+          # makepkgArgs: # optional, default is 
           
       # Runs a single command using the runners shell
       - name: Run a one-line script
