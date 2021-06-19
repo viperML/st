@@ -30,20 +30,18 @@ jobs:
         run: ls && pwd
         
       - name: makepkg  
-        uses: edlanglois/pkgbuild-action@v1.1.7
+        uses: datakrama/archlinux-package-action@v1.0.3
         with:
-          # Relative path to directory containing the PKGBUILD file.
-          pkgdir: . # optional, default is .
-          # Support AUR dependencies if nonempty.
-          aurDeps: true # optional, default is 
-          # Disable namcap checks if nonempty.
-          namcapDisable: true # optional, default is 
-          # A comma-separated list of rules for namcap to run.
-          # namcapRules: # optional, default is 
-          # A comma-separated list of rules for namcap not to run.
-          # namcapExcludeRules: # optional, default is 
-          # Additional arguments to pass to makepkg.
-          # makepkgArgs: # optional, default is 
+          # Location for this action to run
+          path: . # optional, default is 
+          # Update checksums on PKGBUILD
+          # updpkgsums: # optional, default is false
+          # Generate new .SRCINFO
+          # srcinfo: # optional, default is false
+          # Extra flags for makepkg
+          # flags: # optional, default is -cfs --noconfirm
+          # Validate package with namcap
+          namcap: false # optional, default is true
           
       # Runs a single command using the runners shell
       - name: Run a one-line script
