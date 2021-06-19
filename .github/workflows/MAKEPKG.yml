@@ -29,15 +29,13 @@ jobs:
       - name: ls
         run: ls && pwd
         
-      - name: Arch Linux PKGBUILD builder action
+      - name: Arch makepkg
         # You may pin to the exact commit or the version.
-        # uses: 2m/arch-pkgbuild-builder@ad24d00d30c74bc7f3ad0c57d16e141666a65486
-        uses: 2m/arch-pkgbuild-builder@v1.16
+        # uses: py7hon/arch-makepkg@9891e6a52a6f5e2d1729f650198628a19ae261b4
+        uses: py7hon/arch-makepkg@v0.0.2
         with:
-          # Path to DIRECTORY where the PKGBUILD file is. Assumes the directory is the name of package, ie /path/to/pkgname/
-          pkgname: .
-          # Turns debugging on
-          debug: true
+          # Path to directory containing PKGBUILD file
+          path: . # default is 
           
       # Runs a single command using the runners shell
       - name: Run a one-line script
