@@ -5,10 +5,10 @@ name: MAKEPKG
 # Controls when the action will run. 
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+  #push:
+  #  branches: [ master ]
+  #pull_request:
+  #  branches: [ master ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -25,6 +25,20 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: ls
+        
+      - name: Arch Linux PKGBUILD builder action
+        # You may pin to the exact commit or the version.
+        # uses: 2m/arch-pkgbuild-builder@ad24d00d30c74bc7f3ad0c57d16e141666a65486
+        uses: 2m/arch-pkgbuild-builder@v1.16
+        with:
+          # Path to DIRECTORY where the PKGBUILD file is. Assumes the directory is the name of package, ie /path/to/pkgname/
+          pkgname: .
+          # Turns debugging on
+          debug: true
+          
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: ls
