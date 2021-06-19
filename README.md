@@ -2,7 +2,7 @@
 
 This is my personal build of the suckless [simple terminal](https://st.suckless.org/), with automatic patching.
 
-[](img/preview01.png)
+![](img/preview02.png)
 
 ## Arch Linux install
 
@@ -20,8 +20,9 @@ You can run `ABS_cleaninstall.sh`, or read it and manually type every line. It w
 
 I may provide **pre-compiled binaries** in the releases tab of this repo
 
-`pacman -U [binary package]`
+`pacman -U [binary package].pkg.tar.zst`
 
+> TODO: use github workdlows to automatic build and publish new versions
 
 ## Other distributions
 Some distro may have specific install instruction for building and packaging st.
