@@ -30,14 +30,7 @@ jobs:
         run: ls && pwd
         
       - name: Arch makepkg
-        # You may pin to the exact commit or the version.
-        # uses: py7hon/arch-makepkg@9891e6a52a6f5e2d1729f650198628a19ae261b4
-        uses: FFY00/build-arch-package@v1
-        with:
-          # PKGBUILD path
-          PKGBUILD: .
-          # Output directory to store the built package (relative to $HOME)
-          # OUTDIR: # optional, default is $HOME/arch-packages
+        uses: mijailr/arch-makepkg-action@v1
           
       # Runs a single command using the runners shell
       - name: Run a one-line script
