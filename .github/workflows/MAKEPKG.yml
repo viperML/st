@@ -30,7 +30,16 @@ jobs:
         run: ls && pwd
         
       - name: Arch makepkg
-        uses: mijailr/arch-makepkg-action@v1
+        uses: 2m/arch-pkgbuild-builder@v1.16
+        with:
+          # Path to DIRECTORY where the PKGBUILD file is. Assumes the directory is the name of package, ie /path/to/pkgname/
+          pkgname: .
+          # Validation target. Can be one of: "pkgbuild", "srcinfo", "run"
+          target: pkgbuild # default is pkgbuild
+          # Command to run after package installation. Used when target=run
+          command: ls # optional
+          # Turns debugging on
+          debug: true # optional
           
       # Runs a single command using the runners shell
       - name: Run a one-line script
