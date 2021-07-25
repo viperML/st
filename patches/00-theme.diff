@@ -1,5 +1,5 @@
---- config.def.h	2021-06-05 11:41:08.099771730 +0200
-+++ config.theme.h	2021-06-15 17:12:33.113968591 +0200
+--- a/config.def.h	2021-07-03 22:30:56.735891581 +0200
++++ b/config.def.h	2021-07-03 22:30:56.735891581 +0200
 @@ -5,8 +5,17 @@
   *
   * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html

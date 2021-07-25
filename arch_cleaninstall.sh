@@ -1,4 +1,7 @@
 #!/bin/sh
+
+echo "WARNING - This script may be broken as I no longer use Arch"
+
 if cat /etc/os-release | grep -q "ID=arch"; then
     diff -b -u config.def.h config.theme.h > patches/00-theme.diff
     cat patches/00-theme.diff
