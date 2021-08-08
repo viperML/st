@@ -11,7 +11,12 @@ compatibility with other commits may vary.
 
 ## Gentoo
 
-Copy all the patches to `/etc/portage/patches/x11-terms/st` and install st-9999.
+Copy all the patches to `/etc/portage/patches/x11-terms/st` and install st-9999:
+
+```
+# mkdir -p /etc/portage/patches/x11-terms/st
+# cp patches/*.diff /etc/portage/patches/x11-terms/st/
+```
 
 
 ## Arch
@@ -29,8 +34,8 @@ Run [`arch_cleaninstall.sh`](arch_cleaninstall.sh). This simple script will:
     ```
     $ git clone git://git.suckless.org/st
     ```
-
-- Move the patches into the root directory
+- Checkout into the exact commit (?)
+- Move the patches into it
 - Apply the patches in order, or with this snippet:
     ```
     #!/bin/bash
@@ -39,7 +44,7 @@ Run [`arch_cleaninstall.sh`](arch_cleaninstall.sh). This simple script will:
         patch -s -i "$patch"
     done;
     ```
-- Build st
+- Continue standard st build+install
 
 
 # Customizing
